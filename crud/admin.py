@@ -6,4 +6,6 @@ class productoadmin(admin.ModelAdmin):
     readonly_fields = ("fecha_creacion",)
 admin.site.register(producto, productoadmin)
 
-admin.site.register(empleado)
+class empleadoadmin(admin.ModelAdmin):
+    readonly_fields = ("fecha_creacion",)
+admin.site.register(empleado, empleadoadmin)
