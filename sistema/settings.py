@@ -45,8 +45,7 @@ JAZZMIN_SETTINGS = {
     "site_title": "Encantos Gisselle",
     "site_header": "Encantos Gisselle",
     "site_brand": "Encantos Gisselle",
-    "site_brand": "Encantos Gisselle",
-    "welcome_sign": "Bienvenidos a encantos Gisselle",
+    "welcome_sign": "Bienvenidos a Encantos Gisselle",
     "copyright": "Encantos Gisselle",
     "site_logo_classes": "img-circle",
     "icons": {
