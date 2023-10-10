@@ -45,9 +45,17 @@ JAZZMIN_SETTINGS = {
     "site_title": "Encantos Gisselle",
     "site_header": "Encantos Gisselle",
     "site_brand": "Encantos Gisselle",
-    "site_brand": "Encantos Gisselle","welcome_sign": "Bienvenidos a encantos Gisselle",
+    "site_brand": "Encantos Gisselle",
+    "welcome_sign": "Bienvenidos a encantos Gisselle",
     "copyright": "Encantos Gisselle",
     "site_logo_classes": "img-circle",
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "crud.empleado": "fa fa-address-book",
+        "crud.producto": "fa fa-list-ul",
+    },
     }
 
 MIDDLEWARE = [
