@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crud',
 ]
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Encantos Gisselle",
+    "site_header": "Encantos Gisselle",
+    "site_brand": "Encantos Gisselle",
+    "site_brand": "Encantos Gisselle","welcome_sign": "Bienvenidos a encantos Gisselle",
+    "copyright": "Encantos Gisselle",
+    "site_logo_classes": "img-circle",
+    }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
