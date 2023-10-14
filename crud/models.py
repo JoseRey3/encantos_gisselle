@@ -12,7 +12,7 @@ class producto(models.Model):
     marca = models.CharField(max_length=50)
     cantidad = models.IntegerField()
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
     
     def __str__(self):
         return self.tipo_prenda
@@ -27,8 +27,26 @@ class empleado(models.Model):
     direccion = models.TextField(blank=True)
     dui = models.IntegerField()
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
     
     def __str__(self):
         return self.nombre + ' ' + self.apellido
 
+class compra(models.Model):
+    numero_compra = models.IntegerField()
+    fecha_compra = models.DateTimeField()
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
+
+    def __srt__(self):
+        return self.numero_compra + ' ' + self.fecha_creacion
+
+class detalle_compra(models.Model):
+    tipo_prenda = models.ForeignKey(producto, on_delete=models.PROTECT)
+    cantidad = models.FloatField(max_length=6)
+    precio_compra = models.FloatField(max_length=6)
+    subtotal= models.FloatField(max_length=6)
+    numero_compra = models.ForeignKey(compra, on_delete=models.CASCADE)
+    
+    def __srt__(self):
+        return self.tipo_prenda

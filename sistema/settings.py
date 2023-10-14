@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crud',
 ]
-
+#Template Jazzmin
 JAZZMIN_SETTINGS = {
     "site_title": "Encantos Gisselle",
     "site_header": "Encantos Gisselle",
@@ -54,6 +54,7 @@ JAZZMIN_SETTINGS = {
         "auth.Group": "fas fa-users",
         "crud.empleado": "fa fa-address-book",
         "crud.producto": "fa fa-list-ul",
+        "crud.compra" : "fa fa-list-ul",
     },
     }
 
