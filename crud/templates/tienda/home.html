@@ -1,0 +1,29 @@
+{% extends 'tienda/base.html' %}
+
+{% block productos %}
+{% for p in productos %}
+<div class="col mb-5">
+    <div class="card h-100">
+        <!-- Product image-->
+        {% if p.imagen %}
+        <img class="card-img-top" src="{{ p.imagen.url }}" alt="..." />
+        {% else %}
+        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+        {% endif %}
+        <!-- Product details-->
+        <div class="card-body p-4">
+            <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder">{{ p.tipo_prenda }}</h5>
+                <!-- Product price-->
+                ${{ p.precio_venta }}
+            </div>
+        </div>
+        <!-- Product actions-->
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver más...</a></div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

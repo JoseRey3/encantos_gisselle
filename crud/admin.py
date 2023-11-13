@@ -12,7 +12,7 @@ admin.site.register(categoria, categoriaadmin)
 class productoadmin(admin.ModelAdmin):
     readonly_fields = ("fecha_creacion",)
     list_display =("tipo_prenda", "talla", "precio_compra","precio_venta", "existencias", )
-    search_fields = ("tipo_prenda", "talla",)
+    search_fields = ("tipo_prenda", "talla", )
     list_per_page = 10
 admin.site.register(producto, productoadmin)
 

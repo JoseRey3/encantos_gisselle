@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 # Create your models here.
 class categoria(models.Model):
@@ -12,13 +10,19 @@ class categoria(models.Model):
     def __srt__(self):
         return self.nombre_categoria 
     
+opciones_genero = [
+    [0, "Mujer"],
+    [1, "Hombre"],
+]
+    
 class producto(models.Model):
     tipo_prenda = models.CharField(max_length=100)
-    talla = models.CharField(max_length=4)
-    color = models.CharField(max_length=12, blank=True)
+    talla = models.CharField(max_length=20)
+    color = models.CharField(max_length=50, blank=True)
     material = models.TextField(blank=True)
+    imagen = models.ImageField(upload_to="productos", null=True)
     nombre_categoria = models.ForeignKey(categoria, on_delete=models.PROTECT)
-    genero = models.CharField(max_length=12)
+    genero = models.IntegerField(choices=opciones_genero)
     marca = models.CharField(max_length=50, blank=True)
     precio_compra = models.FloatField(max_length=6, null=True, blank=True, default=0)
     precio_venta = models.FloatField(max_length=6, null=True, blank=True, default=0)
