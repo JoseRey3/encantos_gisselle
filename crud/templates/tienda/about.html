@@ -1,5 +1,65 @@
 {% extends 'tienda/base.html' %}
 
 {% block productos %}
+{% load static %}
+<section class="py-5">
+    <div class="container">
+        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-1 row-cols-xl-1 justify-content-center">
+            <div class="text-center ">
+                <div class="row featurette">
+                    <div class="col-md-7">
+                      <h2 class="featurette-heading fw-normal lh-1">Nuestra <span class="text-body-secondary">historia.</span></h2>
+                      <p class="lead">Al culminar los estudios superiores, comenzó a buscar trabajos en diferentes lugares, llegando a trabajar en un banco donde duro muy poco tiempo a causa de una enfermedad no pudo seguir, después de recuperarse, volvió a buscar trabajo esta vez en el banco de lo trabajadores pero por la situación de los grupos criminales que había en el país decidió renuncia, en ese entonces con su hermana tuvieron la idea de abrir la tienda de ropa y es así que la inauguraron en el 2016 antes está ubicada en el Barrio San Francisco en El Transito y después en el 2017 se trasladaron al Barrio La Cruz en El Transito donde continúan hasta la actualidad. </p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="card-img-top" src="{% static 'tienda/img/historia.png' %}" alt="..." />
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row px-4 px-lg-5 mt-5 gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center"> 
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'tienda/img/mision.png' %}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Misión</h5>
+                            <p>"Nuestra misión en Encantos Gisselle es proporcionar a nuestros clientes ropa de moda de alta calidad que refleje su estilo personal y les haga sentirse confiados y hermosos. Nos esforzamos por ofrecer un servicio al cliente excepcional, escuchar sus necesidades y brindarles una experiencia de compra única. Además, estamos comprometidos con el crecimiento sostenible de nuestro negocio y la contribución positiva a la comunidad en la que operamos."</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'tienda/img/vision.jpg' %}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Visión</h5>
+                            <p>Ser la tienda de ropa de referencia en El Transito, reconocida por ofrecer una amplia selección de prendas de moda de alta calidad y estilo, brindando a nuestros clientes una experiencia de compra excepcional y convirtiéndonos en un punto de encuentro para la comunidad amante de la moda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'tienda/img/objetivos.jpeg' %}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Objetivo</h5>
+                            <p>El objetivo principal de Encantos Gisselle es consolidar y expandir nuestra presencia en El Transito como la tienda de ropa líder, aumentando nuestro alcance y visibilidad en la comunidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+        </div>
+    </div>
+</section>
 
 {% endblock %}

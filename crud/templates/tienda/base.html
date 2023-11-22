@@ -45,17 +45,22 @@
             </div>
         </header>
         <!-- Section-->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    {% block productos %}
-                    {% endblock %}
-                </div>
-            </div>
-        </section>
+        {% block productos %}
+        {% endblock %}
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Encantos Gisselle 2023</p></div>
+            <div class="container">
+                <div class="row row-cols-2">
+                    <div class="col-6">
+                        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Encantos Gisselle 2023</p></div>
+                    </div>
+                    <div class="col-6">
+                        <p class="m-0 text-center text-white">Dirección: <span>2ª Av. sur Y 7ª calle oriente, El Transito San Miguel. </span></p>
+                        <p class="m-0 text-center text-white">Numero de celular: 7444-3973</p>
+                        <p class="m-0 text-center text-white">Facebook: Patthy Gisselle </p>
+                    </div>
+                </div>
+            </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
