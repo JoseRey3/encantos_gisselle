@@ -1,0 +1,41 @@
+{% extends 'tienda/base.html' %}
+
+{% block productos %}
+{% load static %}
+<section class="py-5">
+    <div class="container">
+        <div class="card mb-3">
+            <div class="row g-0">  
+            <div class="col-md-5">
+                    {% if product.imagen %}
+                    <img class="img-fluid rounded-start" src="{{  product.imagen.url }}" alt="..." />
+                    {% else %}
+                    <img class="img-fluid rounded-start" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                    {% endif %}
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                <h2 class="card-title text-center" style="font-size: 30px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><b>{{ product.tipo_prenda }}</b></h2>
+                <hr class="featurette-divider">
+                <p class="card-text"><b>Talla: </b>{{ product.talla }}</p>
+                <p class="card-text"><b>Color: </b>{{ product.color }}</p>
+                <p class="card-text"><b>Material: </b>{{ product.material }}</p>
+                <p class="card-text"><b>Genero: </b>{{ product.genero }}</p>
+                <p class="card-text"><b>Marca: </b>{{ product.marca }}</p>
+                <hr class="featurette-divider">
+                <p class="card-text text-center"><b>Precio: </b><small style="font-size: 30px; color: #d32626; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">${{ product.precio_venta }}</small></p>
+                <hr class="featurette-divider">
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-success" type="button">Agregar al Carrito</button>
+                  </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<h1>
+    
+</h1>
+
+{% endblock %}

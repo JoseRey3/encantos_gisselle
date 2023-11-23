@@ -1,3 +1,4 @@
+from typing import Any
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -13,6 +14,7 @@ class categoria(models.Model):
 opciones_genero = [
     [0, "Mujer"],
     [1, "Hombre"],
+    [2, "Niños"],
 ]
     
 class producto(models.Model):
@@ -32,6 +34,10 @@ class producto(models.Model):
     
     def __str__(self):
         return self.tipo_prenda
+    
+    def delete(self, using=None, keep_parents=False):
+        self.imagen.storage.delete(self.imagen.name)
+        super().delete()
         
 
 class empleado(models.Model):
@@ -58,7 +64,7 @@ class compra(models.Model):
         return self.numero_compra + ' ' + self.fecha_creacion
 
 class detalle_compra(models.Model):
-    tipo_prenda = models.ForeignKey(producto, on_delete=models.PROTECT)
+    tipo_prenda = models.ForeignKey(producto, on_delete=models.CASCADE)
     precio_compra = models.FloatField(max_length=6, null=True, blank=True, default=0)
     cantidad = models.IntegerField(default=0)
     subtotal= models.FloatField(max_length=6, null=True, blank=True, default=0)

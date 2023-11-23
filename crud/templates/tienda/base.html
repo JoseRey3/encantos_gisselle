@@ -16,48 +16,71 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="{% url 'home' %}">Encantos Gisselle</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Todos los productos</a></li> 
+                        {% block categorias %}
+                            {% for c in categorias %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'categoria_page' c.id %}">{{ c.nombre_categoria }}</a></li>
+                            {% endfor %}  
+                        {% endblock %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Acerca de</a></li>
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
+                        <button class="btn btn-success" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-dark text-white ms-3 rounded-pill">0</span>
                         </button>
                     </form>
                 </div>
             </div>
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Encantos Gisselle</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Encuentra todo lo que necesitas en ropa</p>
+        <header class="bg-gradient bg-success py-5">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="{% static 'tienda/img/1.jpg' %}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{% static 'tienda/img/2.jpg' %}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'tienda/img/3.jpg' %}" class="d-block w-100" alt="...">
+                  </div>
                 </div>
-            </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
         </header>
         <!-- Section-->
         {% block productos %}
         {% endblock %}
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
+        <footer class="py-5 bg-gradient bg-dark">
             <div class="container">
                 <div class="row row-cols-2">
-                    <div class="col-6">
-                        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Encantos Gisselle 2023</p></div>
-                    </div>
-                    <div class="col-6">
+                    <div class="col-8">
                         <p class="m-0 text-center text-white">Dirección: <span>2ª Av. sur Y 7ª calle oriente, El Transito San Miguel. </span></p>
-                        <p class="m-0 text-center text-white">Numero de celular: 7444-3973</p>
+                        <p class="m-0 text-center text-white">Número de celular: 7444-3973</p>
                         <p class="m-0 text-center text-white">Facebook: Patthy Gisselle </p>
+                        <br><br>
+                        <p class="m-0 text-center text-white">Copyright &copy; Encantos Gisselle 2023</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="{% static 'tienda/img/logo.jpg' %}" style="height: 200px; width: 200px;" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                        
                     </div>
                 </div>
             </div>
